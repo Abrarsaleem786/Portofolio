@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abrar Saleem | Software Engineer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="/assets/css/style.css" rel="stylesheet">
+
+    <style>
+        .glass {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .gradient-text {
+            background: linear-gradient(90deg, #06b6d4 0%, #3b82f6 100%);
+             background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        body { background-color: #0f172a; color: #f1f5f9; }
+    </style>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        document.body.style.visibility = "visible";
+    });
+</script>
+</head>
+<body>  
+    
+    <nav class="fixed w-full z-50 glass px-6 py-4 flex justify-between items-center">
+        <div class="text-2xl font-bold gradient-text">ABRAR SALEEM</div>
+        <div class="hidden md:flex space-x-8">
+            <a href="index.html" class="hover:text-cyan-400 transition">Home</a>
+            <a href="about.html" class="hover:text-cyan-400 transition">About</a>
+            <a href="skills.html" class="hover:text-cyan-400 transition">Skills</a>
+            <a href="experience.html" class="hover:text-cyan-400 transition">Experience</a>
+            <a href="contact.html" class="hover:text-cyan-400 transition">Contact</a>
+        </div>
+    </nav>
+<section class="py-20 bg-slate-900 min-h-screen pt-32 px-6">
+    <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl font-bold mb-16 gradient-text text-center" data-aos="fade-down">Work History</h2>
+        
+        <div class="relative border-l-2 border-slate-800 pl-8 ml-4">
+            <div class="mb-12" data-aos="fade-up">
+                <div class="absolute -left-2.5 w-5 h-5 bg-cyan-500 rounded-full border-4 border-slate-900"></div>
+                <h3 class="text-2xl font-bold text-white">Software Developer</h3>
+                <p class="text-cyan-400 font-medium mb-4">SELLTIME PTY (LTD), Australia (Remote) | May 2023 - Present</p>
+
+                <div class="glass p-6 rounded-xl border border-slate-800">
+                    <ul class="text-gray-400 space-y-3 text-sm leading-relaxed">
+                    <li>Developed and maintained RESTful endpoints for a central Web API</li>
+                    <li>Engineered backend features for e-commerce, content management, and service booking.</li>
+                    <li>Developed a dynamic, component-based CMS portal using Angular.</li>
+                    <li>Built and tested user-facing features within the ASP.NET MVC framework.</li>
+                    <li>Optimized complex SQL queries to enhance data retrieval speed.</li>
+                    <li>Collaborated with team using Git for version control.</li>
+                    <li>Diagnosed and resolved performance bottlenecks across the full stack.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<footer class="py-10 text-center border-t border-slate-800 mt-20">
+        <p class="text-gray-500 text-sm">© 2025 Abrar Saleem | Software Engineer</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ 
+            duration: 1000, 
+            once: true,
+            offset: 100 
+        });
+    </script>
+</body>
+</html>

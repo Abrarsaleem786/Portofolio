@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abrar Saleem | Software Engineer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="/assets/css/style.css" rel="stylesheet">
+
+    <style>
+        .glass {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .gradient-text {
+            background: linear-gradient(90deg, #06b6d4 0%, #3b82f6 100%);
+             background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        body { background-color: #0f172a; color: #f1f5f9; }
+    </style>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        document.body.style.visibility = "visible";
+    });
+</script>
+</head>
+<body>  
+    
+    <nav class="fixed w-full z-50 glass px-6 py-4 flex justify-between items-center">
+        <div class="text-2xl font-bold gradient-text">ABRAR SALEEM</div>
+        <div class="hidden md:flex space-x-8">
+            <a href="index.html" class="hover:text-cyan-400 transition">Home</a>
+            <a href="about.html" class="hover:text-cyan-400 transition">About</a>
+            <a href="skills.html" class="hover:text-cyan-400 transition">Skills</a>
+            <a href="experience.html" class="hover:text-cyan-400 transition">Experience</a>
+            <a href="contact.html" class="hover:text-cyan-400 transition">Contact</a>
+        </div>
+    </nav>
+<section class="py-20 bg-slate-900 min-h-screen pt-32 px-6">
+    <div class="max-w-6xl mx-auto">
+        <h2 class="text-4xl font-bold mb-16 gradient-text text-center" data-aos="fade-down">Featured Projects</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+            <div class="glass p-8 rounded-2xl border border-slate-800" data-aos="flip-left">
+                [_start]<h3 class="text-2xl font-bold text-cyan-400 mb-4">Selltime Integrated Web Platform [: 17]</h3>
+                [_start]<p class="text-gray-400 text-sm mb-6">Integrated MVC platform designed to deploy and manage a diverse portfolio of web properties using a centralized Web API[: 17, 18].</p>
+                <div class="flex flex-wrap gap-2">
+                    <span class="bg-slate-800 text-xs px-3 py-1 rounded text-gray-300">ASP.NET MVC</span>
+                    <span class="bg-slate-800 text-xs px-3 py-1 rounded text-gray-300">Web API</span>
+                    <span class="bg-slate-800 text-xs px-3 py-1 rounded text-gray-300">E-commerce</span>
+                </div>
+            </div>
+
+            <div class="glass p-8 rounded-2xl border border-slate-800" data-aos="flip-right">
+                [_start]<h3 class="text-2xl font-bold text-cyan-400 mb-4">Dynamic CMS Portal [: 19]</h3>
+                [_start]<p class="text-gray-400 text-sm mb-6">Custom CMS built with Angular frontend and .NET Web API backend for real-time website data management[: 19, 24].</p>
+                <div class="flex flex-wrap gap-2">
+                    <span class="bg-slate-800 text-xs px-3 py-1 rounded text-gray-300">Angular</span>
+                    <span class="bg-slate-800 text-xs px-3 py-1 rounded text-gray-300">.NET Core</span>
+                    <span class="bg-slate-800 text-xs px-3 py-1 rounded text-gray-300">CMS</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<footer class="py-10 text-center border-t border-slate-800 mt-20">
+        <p class="text-gray-500 text-sm">© 2025 Abrar Saleem | Software Engineer</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ 
+            duration: 1000, 
+            once: true,
+            offset: 100 
+        });
+    </script>
+</body>
+</html>
