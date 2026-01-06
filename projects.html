@@ -3,61 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abrar Saleem | Software Engineer</title>
+    <title>Projects | Abrar Saleem</title>
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link href="/Portofolio/assets/css/style.css" rel="stylesheet">
 
     <style>
         .glass {
-            background: rgba(255, 255, 255, 0.03);
+            background: rgba(15, 23, 42, 0.8);
             backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .card-glass {
+            background: rgba(30, 41, 59, 0.3);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .card-glass:hover {
+            background: rgba(30, 41, 59, 0.6);
+            border-color: rgba(34, 211, 238, 0.4);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 0 15px rgba(34, 211, 238, 0.1);
         }
         .gradient-text {
             background: linear-gradient(90deg, #06b6d4 0%, #3b82f6 100%);
-             background-clip: text;
+            background-clip: text;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
+        .nav-link-active {
+            color: #22d3ee;
+            font-weight: 600;
+        }
         body { background-color: #0f172a; color: #f1f5f9; }
+        .tech-badge {
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
     </style>
-    <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        document.body.style.visibility = "visible";
-    });
-</script>
 </head>
-<body>  
+
+<body class="overflow-x-hidden">
+
 <nav class="fixed w-full z-50 glass px-6 py-4">
-    <div class="flex justify-between items-center">
-        <div class="text-2xl font-bold gradient-text">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+        <div class="text-2xl font-bold gradient-text tracking-tighter">
             <a href="index.html">ABRAR SALEEM</a>
         </div>
 
-        <!-- Desktop Menu -->
-        <div class="hidden md:flex space-x-8">
-            <a href="index.html" class="nav-link">Home</a>
-            <a href="about.html" class="nav-link">About</a>
-            <a href="skills.html" class="nav-link">Skills</a>
-            <a href="experience.html" class="nav-link">Experience</a>
-            <a href="projects.html" class="nav-link">Projects</a>
-            <a href="contact.html" class="nav-link">Contact</a>
+        <div class="hidden md:flex space-x-8 items-center">
+            <a href="index.html" class="nav-link hover:text-cyan-400 transition">Home</a>
+            <a href="about.html" class="nav-link hover:text-cyan-400 transition">About</a>
+            <a href="skills.html" class="nav-link hover:text-cyan-400 transition">Skills</a>
+            <a href="experience.html" class="nav-link hover:text-cyan-400 transition">Experience</a>
+            <a href="projects.html" class="nav-link hover:text-cyan-400 transition">Projects</a>
+            <a href="contact.html" class="nav-link hover:text-cyan-400 transition">Contact</a>
         </div>
 
-        <!-- Hamburger -->
-        <button id="menuBtn" class="md:hidden focus:outline-none">
-            <svg class="w-8 h-8 text-gray-200" fill="none" stroke="currentColor" stroke-width="2"
-                viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round"
-                    d="M4 6h16M4 12h16M4 18h16" />
+        <button id="menuBtn" class="md:hidden focus:outline-none p-2 hover:bg-slate-800 rounded-lg transition">
+            <svg class="w-8 h-8 text-gray-200" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
             </svg>
         </button>
     </div>
 
-    <!-- Mobile Menu -->
-    <div id="mobileMenu"
-        class="hidden md:hidden mt-4 bg-slate-900/95 rounded-xl p-6 flex flex-col space-y-4">
+    <div id="mobileMenu" class="hidden md:hidden mt-4 bg-slate-800 rounded-2xl p-6 flex flex-col space-y-4 shadow-2xl border border-slate-700">
         <a href="index.html" class="nav-link">Home</a>
         <a href="about.html" class="nav-link">About</a>
         <a href="skills.html" class="nav-link">Skills</a>
@@ -67,77 +79,143 @@
     </div>
 </nav>
 
-<section class="py-20 bg-slate-900 min-h-screen pt-32 px-6">
+<section class="py-24 min-h-screen pt-32 px-6">
     <div class="max-w-6xl mx-auto">
-        <h2 class="text-4xl font-bold mb-16 gradient-text text-center" data-aos="fade-down">Featured Projects</h2>
-        
+
+        <header class="text-center mb-16" data-aos="fade-down">
+            <h2 class="text-4xl md:text-5xl font-bold gradient-text inline-block">Featured Projects</h2>
+            <div class="h-1 w-20 bg-cyan-500 mx-auto mt-4 rounded-full"></div>
+            <p class="text-gray-400 max-w-2xl mx-auto mt-8 text-lg leading-relaxed">
+                A selection of <strong>production-grade applications</strong> I’ve worked on, focusing on scalability,
+                performance, and real business requirements.
+            </p>
+        </header>
+
         <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-            <div class="glass p-8 rounded-2xl border border-slate-800" data-aos="flip-left">
-            <h3 class="text-2xl font-bold text-cyan-400 mb-4">Selltime Integrated Web Platform </h3>
-            <p class="text-gray-400 text-sm mb-6">Integrated MVC platform designed to deploy and manage a diverse portfolio of web properties using a centralized Web API.</p>
+
+            <div class="card-glass p-8 md:p-10 rounded-3xl border border-slate-800 flex flex-col justify-between" data-aos="fade-up">
+                <div>
+                    <div class="flex items-center justify-between mb-6">
+                        <h3 class="text-2xl font-bold text-white group-hover:text-cyan-400 transition">
+                            Selltime Integrated Web Platform
+                        </h3>
+                        <svg class="w-6 h-6 text-cyan-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" /></svg>
+                    </div>
+
+                    <p class="text-gray-400 text-base mb-6 leading-relaxed">
+                        A <strong>multi-tenant web platform</strong> designed to deploy and manage multiple business websites
+                        through a centralized Web API and shared infrastructure.
+                    </p>
+
+                    <ul class="text-gray-300 text-sm space-y-3 mb-8">
+                        <li class="flex items-start"><span class="text-cyan-500 mr-2">▹</span> Built scalable <strong>REST APIs</strong> serving multiple frontends</li>
+                        <li class="flex items-start"><span class="text-cyan-500 mr-2">▹</span> Developed <strong>ASP.NET MVC</strong> systems with central backend</li>
+                        <li class="flex items-start"><span class="text-cyan-500 mr-2">▹</span> Implemented e-commerce and CMS modules</li>
+                        <li class="flex items-start"><span class="text-cyan-500 mr-2">▹</span> Optimized <strong>SQL queries</strong> for production performance</li>
+                    </ul>
+                </div>
+
                 <div class="flex flex-wrap gap-2">
-                    <span class="bg-slate-800 text-xs px-3 py-1 rounded text-gray-300">ASP.NET MVC</span>
-                    <span class="bg-slate-800 text-xs px-3 py-1 rounded text-gray-300">Web API</span>
-                    <span class="bg-slate-800 text-xs px-3 py-1 rounded text-gray-300">E-commerce</span>
+                    <span class="tech-badge text-cyan-400 text-[10px] uppercase tracking-widest font-bold px-3 py-1 rounded-full">ASP.NET MVC</span>
+                    <span class="tech-badge text-cyan-400 text-[10px] uppercase tracking-widest font-bold px-3 py-1 rounded-full">Web API</span>
+                    <span class="tech-badge text-cyan-400 text-[10px] uppercase tracking-widest font-bold px-3 py-1 rounded-full">Entity Framework</span>
+                    <span class="tech-badge text-cyan-400 text-[10px] uppercase tracking-widest font-bold px-3 py-1 rounded-full">SQL Server</span>
+                    <span class="tech-badge text-cyan-400 text-[10px] uppercase tracking-widest font-bold px-3 py-1 rounded-full">LINQ</span>
+                    <span class="tech-badge text-cyan-400 text-[10px] uppercase tracking-widest font-bold px-3 py-1 rounded-full">Azure</span>
                 </div>
             </div>
 
-            <div class="glass p-8 rounded-2xl border border-slate-800" data-aos="flip-right">
-            <h3 class="text-2xl font-bold text-cyan-400 mb-4">Dynamic CMS Portal (SaaS)</h3>
-            <p class="text-gray-400 text-sm mb-6">Custom CMS built with Angular frontend and .NET Web API backend for real-time website data management.</p>
+            <div class="card-glass p-8 md:p-10 rounded-3xl border border-slate-800 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="100">
+                <div>
+                    <div class="flex items-center justify-between mb-6">
+                        <h3 class="text-2xl font-bold text-white">Dynamic CMS Portal (SaaS)</h3>
+                        <svg class="w-6 h-6 text-cyan-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" /></svg>
+                    </div>
+
+                    <p class="text-gray-400 text-base mb-6 leading-relaxed">
+                        A <strong>SaaS-based content management system</strong> allowing non-technical users
+                        to manage websites, pages, media, and settings in real time.
+                    </p>
+
+                    <ul class="text-gray-300 text-sm space-y-3 mb-8">
+                        <li class="flex items-start"><span class="text-cyan-500 mr-2">▹</span> Developed a <strong>component-driven Angular</strong> frontend</li>
+                        <li class="flex items-start"><span class="text-cyan-500 mr-2">▹</span> Designed reusable <strong>.NET Web APIs</strong></li>
+                        <li class="flex items-start"><span class="text-cyan-500 mr-2">▹</span> Implemented <strong>RBAC</strong> and dynamic content rendering</li>
+                        <li class="flex items-start"><span class="text-cyan-500 mr-2">▹</span> Focused on scalability and long-term maintainability</li>
+                    </ul>
+                </div>
+
                 <div class="flex flex-wrap gap-2">
-                    <span class="bg-slate-800 text-xs px-3 py-1 rounded text-gray-300">Angular</span>
-                    <span class="bg-slate-800 text-xs px-3 py-1 rounded text-gray-300">.NET Core</span>
-                    <span class="bg-slate-800 text-xs px-3 py-1 rounded text-gray-300">CMS</span>
+                    <span class="tech-badge text-cyan-400 text-[10px] uppercase tracking-widest font-bold px-3 py-1 rounded-full">Angular</span>
+                    <span class="tech-badge text-cyan-400 text-[10px] uppercase tracking-widest font-bold px-3 py-1 rounded-full">TypeScript</span>
+                    <span class="tech-badge text-cyan-400 text-[10px] uppercase tracking-widest font-bold px-3 py-1 rounded-full">.NET Core</span>
+                    <span class="tech-badge text-cyan-400 text-[10px] uppercase tracking-widest font-bold px-3 py-1 rounded-full">JWT Auth</span>
+                    <span class="tech-badge text-cyan-400 text-[10px] uppercase tracking-widest font-bold px-3 py-1 rounded-full">Repository Pattern</span>
+                    <span class="tech-badge text-cyan-400 text-[10px] uppercase tracking-widest font-bold px-3 py-1 rounded-full">SaaS</span>
                 </div>
             </div>
 
-             <div class="glass p-8 rounded-2xl border border-slate-800" data-aos="flip-left">
-            <h3 class="text-2xl font-bold text-cyan-400 mb-4">Healthcare Product (PSS) </h3>
-            <p class="text-gray-400 text-sm mb-6">Integrated .NET web API with vue js in dynamic health care Product.</p>
-                <div class="flex flex-wrap gap-2">
-                    <span class="bg-slate-800 text-xs px-3 py-1 rounded text-gray-300">.NET Web API</span>
-                    <span class="bg-slate-800 text-xs px-3 py-1 rounded text-gray-300">Vue.js</span>
-                    <span class="bg-slate-800 text-xs px-3 py-1 rounded text-gray-300">EF Core</span>
-                    <span class="bg-slate-800 text-xs px-3 py-1 rounded text-gray-300">Dapper</span>
+            <div class="card-glass p-8 md:p-10 rounded-3xl border border-slate-800 flex flex-col justify-between" data-aos="fade-up">
+                <div>
+                    <div class="flex items-center justify-between mb-6">
+                        <h3 class="text-2xl font-bold text-white">Healthcare Product (PSS)</h3>
+                        <svg class="w-6 h-6 text-cyan-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
+                    </div>
 
+                    <p class="text-gray-400 text-base mb-6 leading-relaxed">
+                        A healthcare-focused product supporting <strong>data-driven workflows</strong>,
+                        analytics, and reporting for internal operational teams.
+                    </p>
+
+                    <ul class="text-gray-300 text-sm space-y-3 mb-8">
+                        <li class="flex items-start"><span class="text-cyan-500 mr-2">▹</span> Built backend APIs for <strong>healthcare data processing</strong></li>
+                        <li class="flex items-start"><span class="text-cyan-500 mr-2">▹</span> Integrated <strong>Vue.js</strong> frontend with .NET services</li>
+                        <li class="flex items-start"><span class="text-cyan-500 mr-2">▹</span> Used <strong>Dapper and EF Core</strong> for data optimization</li>
+                        <li class="flex items-start"><span class="text-cyan-500 mr-2">▹</span> Significantly improved system reliability</li>
+                    </ul>
+                </div>
+
+                <div class="flex flex-wrap gap-2">
+                    <span class="tech-badge text-cyan-400 text-[10px] uppercase tracking-widest font-bold px-3 py-1 rounded-full">Vue.js</span>
+                    <span class="tech-badge text-cyan-400 text-[10px] uppercase tracking-widest font-bold px-3 py-1 rounded-full">.NET 8</span>
+                    <span class="tech-badge text-cyan-400 text-[10px] uppercase tracking-widest font-bold px-3 py-1 rounded-full">Dapper</span>
+                    <span class="tech-badge text-cyan-400 text-[10px] uppercase tracking-widest font-bold px-3 py-1 rounded-full">AutoMapper</span>
+                    <span class="tech-badge text-cyan-400 text-[10px] uppercase tracking-widest font-bold px-3 py-1 rounded-full">Swagger/OpenAPI</span>
+                    <span class="tech-badge text-cyan-400 text-[10px] uppercase tracking-widest font-bold px-3 py-1 rounded-full">Healthcare IT</span>
                 </div>
             </div>
+
         </div>
     </div>
 </section>
 
+<footer class="py-12 text-center border-t border-slate-800 bg-slate-950/50">
+    <div class="max-w-7xl mx-auto px-6">
+        <p class="text-gray-400 text-sm tracking-widest uppercase">© 2025 Abrar Saleem | Software Engineer</p>
+    </div>
+</footer>
 
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
-<footer class="py-10 text-center border-t border-slate-800 mt-20">
-        <p class="text-gray-500 text-sm">© 2025 Abrar Saleem | Software Engineer</p>
-    </footer>
-
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
+    // Navigation Active Link
     const currentPage = location.pathname.split("/").pop() || "index.html";
-
     document.querySelectorAll(".nav-link").forEach(link => {
         if (link.getAttribute("href") === currentPage) {
             link.classList.add("nav-link-active");
         }
     });
 
-    // Mobile menu toggle
+    // Mobile Menu Toggle
     const menuBtn = document.getElementById("menuBtn");
     const mobileMenu = document.getElementById("mobileMenu");
-
     menuBtn?.addEventListener("click", () => {
         mobileMenu.classList.toggle("hidden");
     });
+
+    // Initialize AOS
+    AOS.init({ duration: 1000, once: true, offset: 100 });
 </script>
 
-    <script>
-        AOS.init({ 
-            duration: 1000, 
-            once: true,
-            offset: 100 
-        });
-    </script>
 </body>
 </html>

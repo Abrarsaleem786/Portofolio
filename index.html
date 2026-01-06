@@ -9,32 +9,48 @@
     <link href="/Portofolio/assets/css/style.css" rel="stylesheet">
     <style>
         .glass {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
         .gradient-text {
-            background: linear-gradient(90deg, #00d2ff 0%, #3a7bd5 100%);
-             background-clip: text;
+            background: linear-gradient(90deg, #22d3ee 0%, #3b82f6 100%);
+            background-clip: text;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
+        .nav-link {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+        .nav-link-active {
+            color: #22d3ee;
+            font-weight: 600;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: #22d3ee;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
     </style>
-    <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        document.body.style.visibility = "visible";
-    });
-</script>
 </head>
-<body class="bg-slate-900 text-gray-100 font-sans leading-normal tracking-normal">
+<body class="bg-slate-900 text-gray-100 font-sans leading-normal tracking-normal overflow-x-hidden">
+
 <nav class="fixed w-full z-50 glass px-6 py-4">
-    <div class="flex justify-between items-center">
-        <div class="text-2xl font-bold gradient-text">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+        <div class="text-2xl font-bold gradient-text tracking-tighter">
             <a href="index.html">ABRAR SALEEM</a>
         </div>
 
-        <!-- Desktop Menu -->
-        <div class="hidden md:flex space-x-8">
+        <div class="hidden md:flex space-x-8 items-center">
             <a href="index.html" class="nav-link">Home</a>
             <a href="about.html" class="nav-link">About</a>
             <a href="skills.html" class="nav-link">Skills</a>
@@ -43,19 +59,14 @@
             <a href="contact.html" class="nav-link">Contact</a>
         </div>
 
-        <!-- Hamburger -->
-        <button id="menuBtn" class="md:hidden focus:outline-none">
-            <svg class="w-8 h-8 text-gray-200" fill="none" stroke="currentColor" stroke-width="2"
-                viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round"
-                    d="M4 6h16M4 12h16M4 18h16" />
+        <button id="menuBtn" class="md:hidden focus:outline-none p-2 hover:bg-slate-800 rounded-lg transition">
+            <svg class="w-8 h-8 text-gray-200" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
             </svg>
         </button>
     </div>
 
-    <!-- Mobile Menu -->
-    <div id="mobileMenu"
-        class="hidden md:hidden mt-4 bg-slate-900/95 rounded-xl p-6 flex flex-col space-y-4">
+    <div id="mobileMenu" class="hidden md:hidden mt-4 bg-slate-800 rounded-2xl p-6 flex flex-col space-y-4 shadow-2xl border border-slate-700">
         <a href="index.html" class="nav-link">Home</a>
         <a href="about.html" class="nav-link">About</a>
         <a href="skills.html" class="nav-link">Skills</a>
@@ -65,60 +76,67 @@
     </div>
 </nav>
 
+<section id="about" class="min-h-screen flex flex-col md:flex-row items-center justify-center px-6 md:px-20 pt-24 pb-12">
+    <div class="md:w-1/2 mb-12 md:mb-0" data-aos="fade-right">
+        <h1 class="text-5xl md:text-7xl font-extrabold mb-6">Hi, I'm <span class="gradient-text">Abrar Saleem</span></h1>
+        <p class="text-xl text-gray-400 mb-6 leading-relaxed">
+            <strong>Full-Stack Developer: .NET APIs & Angular + Vue Frontends</strong> with over 2 years of experience specializing in the Microsoft technology stack.
+        </p>
+        <p class="text-xl text-gray-400 mb-8 leading-relaxed">
+            I build secure, scalable web applications that solve real business problems.
+        </p>
 
-
-    <section id="about" class="min-h-screen flex flex-col md:flex-row items-center justify-center px-10 pt-20">
-        <div class="md:w-1/2 mb-10 md:mb-0" data-aos="fade-right">
-            <h1 class="text-5xl md:text-7xl font-extrabold mb-4">Hi, I'm <span class="gradient-text">Abrar</span></h1>
-            <p class="text-xl text-gray-400 mb-6"><strong>Accomplished Software Engineer</strong> with over 2 years of experience specializing in the Microsoft technology stack.</p>
-            <div class="flex space-x-4">
-                <a href="/Portofolio/contact.html" class="bg-cyan-600 hover:bg-cyan-500 px-8 py-3 rounded-full font-bold transition">Hire Me</a>
-                <a href="/Portofolio/projects.html" class="border border-cyan-600 px-8 py-3 rounded-full font-bold hover:bg-cyan-600/20 transition">View Work</a>
+        <div class="flex flex-wrap gap-4">
+            <a href="/Portofolio/contact.html" class="bg-cyan-600 hover:bg-cyan-500 text-white px-10 py-4 rounded-full font-bold transition transform hover:-translate-y-1 shadow-lg shadow-cyan-900/20 text-center">Hire Me</a>
+            <a href="/Portofolio/projects.html" class="border border-cyan-600 px-10 py-4 rounded-full font-bold hover:bg-cyan-600/10 transition transform hover:-translate-y-1 text-center">View Work</a>
+        </div>
+    </div>
+    
+    <div class="md:w-1/2 flex justify-center md:justify-end" data-aos="zoom-in">
+        <div class="relative group">
+            <div class="absolute -inset-1 bg-gradient-to-r from-cyan-400 to-blue-600 rounded-full blur opacity-40 group-hover:opacity-75 transition duration-1000"></div>
+            <div class="relative bg-slate-900 rounded-full p-2">
+                <img src="/Portofolio/assets/images/img.png" alt="Abrar Saleem" class="rounded-full w-64 h-64 md:w-80 md:h-80 object-cover grayscale hover:grayscale-0 transition duration-500">
             </div>
         </div>
-        <div class="md:w-1/3 flex justify-center" data-aos="zoom-in">
-            <div class="relative">
-                <div class="absolute -inset-1 bg-gradient-to-r from-cyan-400 to-blue-600 rounded-full blur opacity-75"></div>
-                <img src="/Portofolio/assets/images/img.png" alt="Abrar Saleem" class="relative rounded-full w-64 h-64 object-cover border-4 border-slate-900">
-            </div>
-        </div>
-    </section>
+    </div>
+</section>
 
-<section id="experience" class="py-20 bg-slate-900 px-6 md:px-10">
-    <div class="max-w-5xl mx-auto">
-        <h2 class="text-4xl font-bold text-center mb-16 gradient-text" data-aos="fade-up">Professional Experience</h2>
+<section id="experience" class="py-24 bg-slate-900/50 px-6">
+    <div class="max-w-6xl mx-auto">
+        <h2 class="text-4xl md:text-5xl font-bold text-center mb-20 gradient-text" data-aos="fade-up">Professional Experience</h2>
         
-        <div class="space-y-12">
-            <div class="relative pl-8 md:pl-0" data-aos="fade-up">
-                <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-slate-800"></div>
-                
+        <div class="relative space-y-16">
+            <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-slate-800"></div>
+            
+            <div class="relative" data-aos="fade-up">
                 <div class="flex flex-col md:flex-row items-center">
-                    <div class="md:w-1/2 md:pr-12 md:text-right mb-4 md:mb-0">
+                    <div class="md:w-1/2 md:pr-16 md:text-right mb-6 md:mb-0">
                         <span class="text-cyan-400 font-bold text-sm tracking-widest uppercase">May 2023 - Sep 2025</span> 
-                        <h3 class="text-2xl font-bold text-white mt-1">Full Stack Developer</h3> 
-                        <p class="text-gray-400 font-medium">SELLTIME PTY (LTD), Australia (Remote)</p> 
+                        <h3 class="text-3xl font-bold text-white mt-2">Full Stack Developer</h3> 
+                        <p class="text-gray-400 font-medium text-lg">SELLTIME PTY (LTD), Australia (Remote)</p> 
                     </div>
 
-                    <div class="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 w-4 h-4 bg-cyan-500 rounded-full border-4 border-slate-900 z-10"></div>
+                    <div class="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-5 h-5 bg-cyan-500 rounded-full border-4 border-slate-900 z-10 shadow-[0_0_15px_rgba(34,211,238,0.5)]"></div>
 
-                    <div class="md:w-1/2 md:pl-12 text-left">
-                        <div class="glass p-6 rounded-xl border border-slate-700/50 hover:border-cyan-500/50 transition">
-                            <ul class="text-gray-300 space-y-3 text-sm md:text-base">
+                    <div class="md:w-1/2 md:pl-16 w-full">
+                        <div class="glass p-8 rounded-2xl border border-slate-700/50 hover:border-cyan-500/50 transition duration-300 group">
+                            <ul class="text-gray-300 space-y-4 text-base">
                                 <li class="flex items-start">
-                                    <span class="text-cyan-500 mr-2">•</span>
-                                    <span>Developed and maintained RESTful endpoints for a central Web API. </span>
+                                    <span class="text-cyan-500 mr-3 text-xl leading-none">▹</span>
+                                    <span>Developed and maintained RESTful endpoints for a central Web API.</span>
                                 </li>
                                 <li class="flex items-start">
-                                    <span class="text-cyan-500 mr-2">•</span>
-                                    <span>Engineered backend features for e-commerce, content management, and service booking modules. </span>
+                                    <span class="text-cyan-500 mr-3 text-xl leading-none">▹</span>
+                                    <span>Engineered backend features for e-commerce, content management, and service booking modules.</span>
                                 </li>
                                 <li class="flex items-start">
-                                    <span class="text-cyan-500 mr-2">•</span>
+                                    <span class="text-cyan-500 mr-3 text-xl leading-none">▹</span>
                                     <span>Built a dynamic, component-based CMS portal using .NET and Angular for real-time updates.</span>
                                 </li>
                                 <li class="flex items-start">
-                                    <span class="text-cyan-500 mr-2">•</span>
-                                    <span>Optimized complex SQL queries to enhance retrieval speed and platform performance. </span>
+                                    <span class="text-cyan-500 mr-3 text-xl leading-none">▹</span>
+                                    <span>Optimized complex SQL queries to enhance retrieval speed and platform performance.</span>
                                 </li>
                             </ul>
                         </div>
@@ -126,27 +144,29 @@
                 </div>
             </div>
 
-            <div class="relative pl-8 md:pl-0" data-aos="fade-up">
+            <div class="relative" data-aos="fade-up">
                 <div class="flex flex-col md:flex-row items-center">
-                    <div class="md:w-1/2 md:pr-12 md:text-right mb-4 md:mb-0">
-                        <span class="text-cyan-400 font-bold text-sm tracking-widest uppercase">Sep 2025 - Continue</span> 
-                        <h3 class="text-2xl font-bold text-white mt-1">Software Engineer</h3> 
-                        <p class="text-gray-400 font-medium">MTBC CareCloud, Rawalpindi</p> 
+                    <div class="md:w-1/2 md:pr-16 md:text-right mb-6 md:mb-0">
+                        <span class="text-cyan-400 font-bold text-sm tracking-widest uppercase">Sep 2025 - Present</span> 
+                        <h3 class="text-3xl font-bold text-white mt-2">Software Engineer</h3> 
+                        <p class="text-gray-400 font-medium text-lg">MTBC CareCloud, Rawalpindi</p> 
                     </div>
-                    <div class="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 w-4 h-4 bg-cyan-500 rounded-full border-4 border-slate-900 z-10"></div>
-                    <div class="md:w-1/2 md:pl-12 text-left">
-                        <div class="glass p-6 rounded-xl border border-slate-700/50">
-                            <ul class="text-gray-300 space-y-3 text-sm">
+
+                    <div class="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-5 h-5 bg-cyan-500 rounded-full border-4 border-slate-900 z-10 shadow-[0_0_15px_rgba(34,211,238,0.5)]"></div>
+
+                    <div class="md:w-1/2 md:pl-16 w-full">
+                        <div class="glass p-8 rounded-2xl border border-slate-700/50 hover:border-cyan-500/50 transition duration-300">
+                            <ul class="text-gray-300 space-y-4 text-base">
                                  <li class="flex items-start">
-                                    <span class="text-cyan-500 mr-2">•</span>
-                                    <span>Working on Health Care Product (.Net + Vue js).</span>
+                                    <span class="text-cyan-500 mr-3 text-xl leading-none">▹</span>
+                                    <span>Working on Health Care Product <strong>(.Net + Vue js)</strong>.</span>
                                 </li>
                                 <li class="flex items-start">
-                                    <span class="text-cyan-500 mr-2">•</span>
+                                    <span class="text-cyan-500 mr-3 text-xl leading-none">▹</span>
                                     <span>Enhanced .NET Core APIs and Vue-based frontends to improve functionality.</span>
                                 </li>
                                 <li class="flex items-start">
-                                    <span class="text-cyan-500 mr-2">•</span>
+                                    <span class="text-cyan-500 mr-3 text-xl leading-none">▹</span>
                                     <span>Contributed to the full SDLC, from requirement analysis to deployment.</span>
                                 </li>
                             </ul>
@@ -158,17 +178,19 @@
     </div>
 </section>
 
+<footer class="py-12 text-center border-t border-slate-800 bg-slate-950/50">
+    <div class="max-w-7xl mx-auto px-6">
+        <p class="text-gray-400 text-sm tracking-widest uppercase">© 2025 Abrar Saleem | Software Engineer</p>
+    </div>
+</footer>
 
-
-
-
-    <footer class="py-10 text-center border-t border-slate-800">
-        <p class="text-gray-500">© 2025 Abrar Saleem.</p>
-    </footer>
-
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
-    const currentPage = location.pathname.split("/").pop() || "index.html";
+    // Initialize Animations
+    AOS.init({ duration: 1000, once: true });
 
+    // Active Link Logic
+    const currentPage = location.pathname.split("/").pop() || "index.html";
     document.querySelectorAll(".nav-link").forEach(link => {
         if (link.getAttribute("href") === currentPage) {
             link.classList.add("nav-link-active");
@@ -178,18 +200,10 @@
     // Mobile menu toggle
     const menuBtn = document.getElementById("menuBtn");
     const mobileMenu = document.getElementById("mobileMenu");
-
     menuBtn?.addEventListener("click", () => {
         mobileMenu.classList.toggle("hidden");
     });
 </script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init({ duration: 1000, once: true });
-    </script>
+
 </body>
-
 </html>
-
-
-
