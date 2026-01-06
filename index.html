@@ -6,7 +6,7 @@
     <title>Abrar Saleem | Software Engineer Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link href="/Portofolio/assets/css/style.css" rel="stylesheet">
+    <link href="./assets/css/style.css" rel="stylesheet">
     <style>
         .glass {
             background: rgba(15, 23, 42, 0.8);
@@ -87,16 +87,16 @@
         </p>
 
         <div class="flex flex-wrap gap-4">
-            <a href="/Portofolio/contact.html" class="bg-cyan-600 hover:bg-cyan-500 text-white px-10 py-4 rounded-full font-bold transition transform hover:-translate-y-1 shadow-lg shadow-cyan-900/20 text-center">Hire Me</a>
-            <a href="/Portofolio/projects.html" class="border border-cyan-600 px-10 py-4 rounded-full font-bold hover:bg-cyan-600/10 transition transform hover:-translate-y-1 text-center">View Work</a>
+            <a href="contact.html" class="bg-cyan-600 hover:bg-cyan-500 text-white px-10 py-4 rounded-full font-bold transition transform hover:-translate-y-1 shadow-lg shadow-cyan-900/20 text-center">Hire Me</a>
+            <a href="projects.html" class="border border-cyan-600 px-10 py-4 rounded-full font-bold hover:bg-cyan-600/10 transition transform hover:-translate-y-1 text-center">View Work</a>
         </div>
     </div>
     
     <div class="md:w-1/2 flex justify-center md:justify-end" data-aos="zoom-in">
         <div class="relative group">
-            <div class="absolute -inset-1 bg-gradient-to-r from-cyan-400 to-blue-600 rounded-full blur opacity-40 group-hover:opacity-75 transition duration-1000"></div>
+            <div class="absolute -inset-1 bg-gradient-to-r from-cyan-400 to-blue-600 rounded-full blur opacity-60"></div>
             <div class="relative bg-slate-900 rounded-full p-2">
-                <img src="/Portofolio/assets/images/img.png" alt="Abrar Saleem" class="rounded-full w-64 h-64 md:w-80 md:h-80 object-cover grayscale hover:grayscale-0 transition duration-500">
+                <img src="./assets/images/img.png" alt="Abrar Saleem" class="rounded-full w-64 h-64 md:w-80 md:h-80 object-cover border-2 border-cyan-500/20">
             </div>
         </div>
     </div>
@@ -120,7 +120,7 @@
                     <div class="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-5 h-5 bg-cyan-500 rounded-full border-4 border-slate-900 z-10 shadow-[0_0_15px_rgba(34,211,238,0.5)]"></div>
 
                     <div class="md:w-1/2 md:pl-16 w-full">
-                        <div class="glass p-8 rounded-2xl border border-slate-700/50 hover:border-cyan-500/50 transition duration-300 group">
+                        <div class="glass p-8 rounded-2xl border border-slate-700/50 hover:border-cyan-500/50 transition duration-300">
                             <ul class="text-gray-300 space-y-4 text-base">
                                 <li class="flex items-start">
                                     <span class="text-cyan-500 mr-3 text-xl leading-none">▹</span>
@@ -128,7 +128,7 @@
                                 </li>
                                 <li class="flex items-start">
                                     <span class="text-cyan-500 mr-3 text-xl leading-none">▹</span>
-                                    <span>Engineered backend features for e-commerce, content management, and service booking modules.</span>
+                                    <span>Engineered backend features for <strong>e-commerce, content management,</strong> and service booking modules.</span>
                                 </li>
                                 <li class="flex items-start">
                                     <span class="text-cyan-500 mr-3 text-xl leading-none">▹</span>
@@ -186,10 +186,8 @@
 
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
-    // Initialize Animations
     AOS.init({ duration: 1000, once: true });
 
-    // Active Link Logic
     const currentPage = location.pathname.split("/").pop() || "index.html";
     document.querySelectorAll(".nav-link").forEach(link => {
         if (link.getAttribute("href") === currentPage) {
@@ -197,7 +195,6 @@
         }
     });
 
-    // Mobile menu toggle
     const menuBtn = document.getElementById("menuBtn");
     const mobileMenu = document.getElementById("mobileMenu");
     menuBtn?.addEventListener("click", () => {
