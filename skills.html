@@ -4,204 +4,278 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Skills | Abrar Saleem</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="./assets/css/tailwind.css" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link href="/Portofolio/assets/css/style.css" rel="stylesheet">
+    <link href="./assets/css/style.css" rel="stylesheet">
 
     <style>
-        .glass {
-            background: rgba(15, 23, 42, 0.8);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        .card-glass {
-            background: rgba(30, 41, 59, 0.3);
+        .skill-card {
+            background: rgba(30, 41, 59, 0.35);
             backdrop-filter: blur(8px);
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.06);
             transition: all 0.3s ease;
         }
-        .card-glass:hover {
-            background: rgba(30, 41, 59, 0.5);
+        .skill-card:hover {
+            background: rgba(30, 41, 59, 0.55);
             border-color: rgba(34, 211, 238, 0.3);
-            transform: translateY(-5px);
+            transform: translateY(-6px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2), 0 0 20px rgba(34,211,238,0.06);
         }
-        .gradient-text {
-            background: linear-gradient(90deg, #06b6d4 0%, #3b82f6 100%);
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .nav-link-active {
-            color: #22d3ee;
-            font-weight: 600;
-        }
-        body { background-color: #0f172a; color: #f1f5f9; }
     </style>
 </head>
-<body class="overflow-x-hidden">   
-    
-<nav class="fixed w-full z-50 glass px-6 py-4">
-    <div class="max-w-7xl mx-auto flex justify-between items-center">
-        <div class="text-2xl font-bold gradient-text tracking-tighter">
-            <a href="index.html">ABRAR SALEEM</a>
+<body class="overflow-x-hidden">
+
+    <div id="scroll-progress"></div>
+    <div id="cursor-glow"></div>
+
+    <!-- ── Navigation ───────────────────────────────── -->
+    <nav class="fixed w-full z-50 glass px-6 py-4">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="text-2xl font-bold gradient-text tracking-tighter">
+                <a href="index.html">ABRAR SALEEM</a>
+            </div>
+            <div class="hidden md:flex space-x-7 items-center">
+                <a href="index.html"      class="nav-link">Home</a>
+                <a href="about.html"      class="nav-link">About</a>
+                <a href="skills.html"     class="nav-link">Skills</a>
+                <a href="experience.html" class="nav-link">Experience</a>
+                <a href="projects.html"   class="nav-link">Projects</a>
+                <a href="contact.html"    class="nav-link">Contact</a>
+                <a href="contact.html" class="hidden lg:flex items-center gap-2 bg-cyan-500 hover:bg-cyan-400 text-slate-900 px-5 py-2 rounded-full text-sm font-bold transition transform hover:-translate-y-0.5 shadow-lg shadow-cyan-500/25">
+                    <span class="w-1.5 h-1.5 bg-slate-900 rounded-full status-dot"></span>
+                    Hire Me
+                </a>
+            </div>
+            <button id="menuBtn" class="md:hidden focus:outline-none p-2 hover:bg-slate-800 rounded-lg transition">
+                <svg class="w-7 h-7 text-gray-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+                </svg>
+            </button>
         </div>
-
-        <div class="hidden md:flex space-x-8 items-center">
-            <a href="index.html" class="nav-link hover:text-cyan-400 transition">Home</a>
-            <a href="about.html" class="nav-link hover:text-cyan-400 transition">About</a>
-            <a href="skills.html" class="nav-link hover:text-cyan-400 transition">Skills</a>
-            <a href="experience.html" class="nav-link hover:text-cyan-400 transition">Experience</a>
-            <a href="projects.html" class="nav-link hover:text-cyan-400 transition">Projects</a>
-            <a href="contact.html" class="nav-link hover:text-cyan-400 transition">Contact</a>
+        <div id="mobileMenu" class="hidden mt-4 bg-slate-800/95 backdrop-blur-lg rounded-2xl p-6 space-y-4 shadow-2xl border border-slate-700/50">
+            <a href="index.html"      class="nav-link">Home</a>
+            <a href="about.html"      class="nav-link">About</a>
+            <a href="skills.html"     class="nav-link">Skills</a>
+            <a href="experience.html" class="nav-link">Experience</a>
+            <a href="projects.html"   class="nav-link">Projects</a>
+            <a href="contact.html"    class="nav-link">Contact</a>
         </div>
+    </nav>
 
-        <button id="menuBtn" class="md:hidden focus:outline-none p-2 hover:bg-slate-800 rounded-lg transition">
-            <svg class="w-8 h-8 text-gray-200" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-        </button>
-    </div>
+    <!-- ── Skills Section ───────────────────────────── -->
+    <section class="py-24 min-h-screen pt-32 px-6">
+        <div class="max-w-6xl mx-auto">
 
-    <div id="mobileMenu" class="hidden md:hidden mt-4 bg-slate-800 rounded-2xl p-6 flex flex-col space-y-4 shadow-2xl border border-slate-700">
-        <a href="index.html" class="nav-link">Home</a>
-        <a href="about.html" class="nav-link">About</a>
-        <a href="skills.html" class="nav-link">Skills</a>
-        <a href="experience.html" class="nav-link">Experience</a>
-        <a href="projects.html" class="nav-link">Projects</a>
-        <a href="contact.html" class="nav-link">Contact</a>
-    </div>
-</nav>
+            <header class="text-center mb-16" data-aos="fade-down">
+                <h2 class="text-4xl md:text-5xl font-bold gradient-text inline-block">Technical Skills</h2>
+                <div class="section-line"></div>
+                <p class="text-gray-400 max-w-2xl mx-auto mt-8 text-base leading-relaxed">
+                    My skill set focuses on building <strong class="text-gray-300">production-ready web applications</strong>
+                    with clean architecture, performance, and long-term maintainability in mind.
+                </p>
+            </header>
 
-<section class="py-24 min-h-screen pt-32 px-6">
-    <div class="max-w-6xl mx-auto text-center">
-        <header class="mb-16" data-aos="fade-down">
-            <h2 class="text-4xl md:text-5xl font-bold gradient-text inline-block">Technical Skills</h2>
-            <div class="h-1 w-20 bg-cyan-500 mx-auto mt-4 rounded-full"></div>
-            <p class="text-gray-400 max-w-2xl mx-auto mt-8 text-lg">
-                My skill set focuses on building <strong>production-ready web applications</strong> with clean architecture, performance, and long-term maintainability in mind.
+            <!-- Skill Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+                <!-- Backend -->
+                <div class="skill-card p-8 rounded-3xl shadow-xl relative overflow-hidden" data-aos="fade-up" data-aos-delay="0">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-cyan-500/5 blur-3xl rounded-full pointer-events-none"></div>
+                    <div class="w-12 h-12 bg-cyan-500/10 border border-cyan-500/20 rounded-2xl flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Backend & API Engineering</h3>
+                    <p class="text-gray-500 text-xs mb-6 uppercase tracking-wider font-medium">Server · APIs · Auth</p>
+                    <ul class="text-gray-400 space-y-3.5 text-sm">
+                        <li class="flex items-start gap-2.5">
+                            <span class="text-cyan-500 text-base leading-none mt-0.5">▹</span>
+                            <span>Design & development of scalable <strong class="text-gray-300">ASP.NET Core Web APIs</strong></span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <span class="text-cyan-500 text-base leading-none mt-0.5">▹</span>
+                            <span><strong class="text-gray-300">Clean Architecture</strong> & separation of concerns</span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <span class="text-cyan-500 text-base leading-none mt-0.5">▹</span>
+                            <span>Secure authentication with <strong class="text-gray-300">Identity & JWT</strong></span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <span class="text-cyan-500 text-base leading-none mt-0.5">▹</span>
+                            <span>Data access via <strong class="text-gray-300">EF Core & Dapper</strong></span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <span class="text-cyan-500 text-base leading-none mt-0.5">▹</span>
+                            <span>RESTful APIs built for real production systems</span>
+                        </li>
+                    </ul>
+                    <div class="flex flex-wrap gap-1.5 mt-6 pt-6 border-t border-slate-700/50">
+                        <span class="tech-badge">.NET Core</span>
+                        <span class="tech-badge">C#</span>
+                        <span class="tech-badge">JWT</span>
+                        <span class="tech-badge">EF Core</span>
+                        <span class="tech-badge">Dapper</span>
+                    </div>
+                </div>
+
+                <!-- Frontend -->
+                <div class="skill-card p-8 rounded-3xl shadow-xl relative overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-blue-500/5 blur-3xl rounded-full pointer-events-none"></div>
+                    <div class="w-12 h-12 bg-blue-500/10 border border-blue-500/20 rounded-2xl flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Frontend Development</h3>
+                    <p class="text-gray-500 text-xs mb-6 uppercase tracking-wider font-medium">UI · SPA · Components</p>
+                    <ul class="text-gray-400 space-y-3.5 text-sm">
+                        <li class="flex items-start gap-2.5">
+                            <span class="text-cyan-500 text-base leading-none mt-0.5">▹</span>
+                            <span>Modern <strong class="text-gray-300">Angular</strong> with clean state management</span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <span class="text-cyan-500 text-base leading-none mt-0.5">▹</span>
+                            <span>Responsive UI with <strong class="text-gray-300">Tailwind & Bootstrap</strong></span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <span class="text-cyan-500 text-base leading-none mt-0.5">▹</span>
+                            <span>Component-driven, reusable development</span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <span class="text-cyan-500 text-base leading-none mt-0.5">▹</span>
+                            <span>Integration with <strong class="text-gray-300">REST APIs</strong> & async data</span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <span class="text-cyan-500 text-base leading-none mt-0.5">▹</span>
+                            <span>Modular development with <strong class="text-gray-300">Vue.js</strong></span>
+                        </li>
+                    </ul>
+                    <div class="flex flex-wrap gap-1.5 mt-6 pt-6 border-t border-slate-700/50">
+                        <span class="tech-badge">Angular</span>
+                        <span class="tech-badge">Vue.js</span>
+                        <span class="tech-badge">TypeScript</span>
+                        <span class="tech-badge">Tailwind</span>
+                    </div>
+                </div>
+
+                <!-- Databases & Tooling -->
+                <div class="skill-card p-8 rounded-3xl shadow-xl relative overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-purple-500/5 blur-3xl rounded-full pointer-events-none"></div>
+                    <div class="w-12 h-12 bg-purple-500/10 border border-purple-500/20 rounded-2xl flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.58 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.58 4 8 4s8-1.79 8-4M4 7c0-2.21 3.58-4 8-4s8 1.79 8 4m0 5c0 2.21-3.58 4-8 4s-8-1.79-8-4"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Databases & Tooling</h3>
+                    <p class="text-gray-500 text-xs mb-6 uppercase tracking-wider font-medium">Data · Cloud · DevOps</p>
+                    <ul class="text-gray-400 space-y-3.5 text-sm">
+                        <li class="flex items-start gap-2.5">
+                            <span class="text-cyan-500 text-base leading-none mt-0.5">▹</span>
+                            <span><strong class="text-gray-300">Complex SQL</strong> queries & performance tuning</span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <span class="text-cyan-500 text-base leading-none mt-0.5">▹</span>
+                            <span>Database design with <strong class="text-gray-300">MS SQL Server</strong></span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <span class="text-cyan-500 text-base leading-none mt-0.5">▹</span>
+                            <span>Professional workflow with <strong class="text-gray-300">Git & GitHub</strong></span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <span class="text-cyan-500 text-base leading-none mt-0.5">▹</span>
+                            <span>API documentation via <strong class="text-gray-300">Swagger/OpenAPI</strong></span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <span class="text-cyan-500 text-base leading-none mt-0.5">▹</span>
+                            <span>Cloud experience with <strong class="text-gray-300">Azure</strong></span>
+                        </li>
+                    </ul>
+                    <div class="flex flex-wrap gap-1.5 mt-6 pt-6 border-t border-slate-700/50">
+                        <span class="tech-badge">SQL Server</span>
+                        <span class="tech-badge">Azure</span>
+                        <span class="tech-badge">Swagger</span>
+                        <span class="tech-badge">Git</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Full tech stack pills -->
+            <div class="mt-16 text-center" data-aos="fade-up">
+                <p class="text-gray-500 text-xs uppercase font-semibold tracking-widest mb-6">All Technologies</p>
+                <div class="flex flex-wrap justify-center gap-2.5">
+                    <span class="tech-badge">ASP.NET Core</span>
+                    <span class="tech-badge">ASP.NET MVC</span>
+                    <span class="tech-badge">Web API</span>
+                    <span class="tech-badge">C#</span>
+                    <span class="tech-badge">Angular</span>
+                    <span class="tech-badge">Vue.js</span>
+                    <span class="tech-badge">TypeScript</span>
+                    <span class="tech-badge">JavaScript</span>
+                    <span class="tech-badge">SQL Server</span>
+                    <span class="tech-badge">EF Core</span>
+                    <span class="tech-badge">Dapper</span>
+                    <span class="tech-badge">JWT</span>
+                    <span class="tech-badge">AutoMapper</span>
+                    <span class="tech-badge">Azure</span>
+                    <span class="tech-badge">Swagger</span>
+                    <span class="tech-badge">Git</span>
+                    <span class="tech-badge">Bitbucket</span>
+                    <span class="tech-badge">Tailwind CSS</span>
+                    <span class="tech-badge">Bootstrap</span>
+                    <span class="tech-badge">LINQ</span>
+                    <span class="tech-badge">Clean Architecture</span>
+                    <span class="tech-badge">Repository Pattern</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── Footer ────────────────────────────────────── -->
+    <footer class="py-10 border-t border-slate-800 bg-slate-950/60">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
+            <p class="text-gray-500 text-sm">
+                © 2025 <span class="text-cyan-400 font-semibold">Abrar Saleem</span> · Software Engineer
             </p>
-        </header>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="card-glass p-8 rounded-3xl border border-slate-800 shadow-xl" data-aos="zoom-in">
-                <div class="w-12 h-12 bg-cyan-500/10 rounded-xl flex items-center justify-center mb-6 mx-auto">
-                    <svg class="w-6 h-6 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" /></svg>
-                </div>
-                <h3 class="text-xl font-bold text-white mb-6">Backend & API Engineering</h3>
-                <ul class="text-gray-400 space-y-4 text-left text-sm">
-                    <li class="flex items-start">
-                        <span class="text-cyan-500 mr-2">▹</span>
-                        <span>Design & development of scalable <strong>ASP.NET Core Web APIs</strong></span>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-cyan-500 mr-2">▹</span>
-                        <span><strong>Clean Architecture</strong> & separation of concerns</span>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-cyan-500 mr-2">▹</span>
-                        <span>Secure authentication (Identity, <strong>JWT</strong>)</span>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-cyan-500 mr-2">▹</span>
-                        <span>Data access using <strong>EF Core & Dapper</strong></span>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-cyan-500 mr-2">▹</span>
-                        <span>RESTful APIs built for real production systems</span>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="card-glass p-8 rounded-3xl border border-slate-800 shadow-xl" data-aos="zoom-in" data-aos-delay="100">
-                <div class="w-12 h-12 bg-blue-500/10 rounded-xl flex items-center justify-center mb-6 mx-auto">
-                    <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
-                </div>
-                <h3 class="text-xl font-bold text-white mb-6">Frontend Development</h3>
-                <ul class="text-gray-400 space-y-4 text-left text-sm">
-                    <li class="flex items-start">
-                        <span class="text-cyan-500 mr-2">▹</span>
-                        <span>Modern <strong>Angular</strong> with clean state management</span>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-cyan-500 mr-2">▹</span>
-                        <span>Responsive UI using <strong>Tailwind & Bootstrap</strong></span>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-cyan-500 mr-2">▹</span>
-                        <span>Component-driven development</span>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-cyan-500 mr-2">▹</span>
-                        <span>Integration with <strong>REST APIs</strong> & async data</span>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-cyan-500 mr-2">▹</span>
-                        <span>Modular development with <strong>Vue.js</strong></span>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="card-glass p-8 rounded-3xl border border-slate-800 shadow-xl" data-aos="zoom-in" data-aos-delay="200">
-                <div class="w-12 h-12 bg-purple-500/10 rounded-xl flex items-center justify-center mb-6 mx-auto">
-                    <svg class="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.58 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.58 4 8 4s8-1.79 8-4M4 7c0-2.21 3.58-4 8-4s8 1.79 8 4m0 5c0 2.21-3.58 4-8 4s-8-1.79-8-4" /></svg>
-                </div>
-                <h3 class="text-xl font-bold text-white mb-6">Databases & Tooling</h3>
-                <ul class="text-gray-400 space-y-4 text-left text-sm">
-                    <li class="flex items-start">
-                        <span class="text-cyan-500 mr-2">▹</span>
-                        <span><strong>Complex SQL</strong> queries & performance tuning</span>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-cyan-500 mr-2">▹</span>
-                        <span>Database design using <strong>MS SQL Server</strong></span>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-cyan-500 mr-2">▹</span>
-                        <span>Professional workflow with <strong>Git & GitHub</strong></span>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-cyan-500 mr-2">▹</span>
-                        <span>API documentation using <strong>Swagger</strong></span>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-cyan-500 mr-2">▹</span>
-                        <span>Exposure to cloud using <strong>Azure</strong></span>
-                    </li>
-                </ul>
+            <div class="footer-social flex items-center gap-5">
+                <a href="https://linkedin.com/in/abrar-saleem" target="_blank" title="LinkedIn">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14C2.24 0 0 2.24 0 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5V5c0-2.76-2.24-5-5-5zM7 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                </a>
+                <a href="mailto:abrarqazi9296@gmail.com" title="Email">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                </a>
+                <a href="https://wa.me/923118990110" target="_blank" title="WhatsApp">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12.04 2C6.56 2 2.04 6.52 2.04 12c0 1.89.5 3.73 1.45 5.36L2 22l4.77-1.43A9.94 9.94 0 0012.04 22c5.48 0 10-4.52 10-10s-4.52-10-10-10z"/></svg>
+                </a>
             </div>
         </div>
-    </div>
-</section>
+    </footer>
 
-<footer class="py-12 text-center border-t border-slate-800 bg-slate-950/50">
-    <div class="max-w-7xl mx-auto px-6">
-        <p class="text-gray-400 text-sm tracking-widest uppercase">© 2025 Abrar Saleem | Software Engineer</p>
-    </div>
-</footer>
-
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-    // Navigation Logic
-    const currentPage = location.pathname.split("/").pop() || "index.html";
-    document.querySelectorAll(".nav-link").forEach(link => {
-        if (link.getAttribute("href") === currentPage) {
-            link.classList.add("nav-link-active");
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        window.addEventListener('scroll', () => {
+            const el = document.getElementById('scroll-progress');
+            if (!el) return;
+            const top = document.documentElement.scrollTop;
+            const h = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            el.style.width = (h > 0 ? (top / h) * 100 : 0) + '%';
+        });
+        const glow = document.getElementById('cursor-glow');
+        if (glow && window.innerWidth > 768) {
+            document.addEventListener('mousemove', e => { glow.style.left = e.clientX + 'px'; glow.style.top = e.clientY + 'px'; });
         }
-    });
+        const currentPage = location.pathname.split('/').pop() || 'index.html';
+        document.querySelectorAll('.nav-link').forEach(link => {
+            if (link.getAttribute('href') === currentPage) link.classList.add('nav-link-active');
+        });
+        document.getElementById('menuBtn')?.addEventListener('click', () => {
+            const m=document.getElementById('mobileMenu'); m.classList.contains('hidden') ? (m.classList.remove('hidden'), m.classList.add('flex','flex-col')) : (m.classList.remove('flex','flex-col'), m.classList.add('hidden'));
+        });
+        AOS.init({ duration: 900, once: true, offset: 80 });
 
-    // Mobile menu toggle
-    const menuBtn = document.getElementById("menuBtn");
-    const mobileMenu = document.getElementById("mobileMenu");
-    menuBtn?.addEventListener("click", () => {
-        mobileMenu.classList.toggle("hidden");
-    });
-
-    // Initialize AOS
-    AOS.init({ 
-        duration: 1000, 
-        once: true,
-        offset: 100 
-    });
-</script>
+    </script>
 </body>
 </html>

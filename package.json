@@ -1,0 +1,12 @@
+{
+  "name": "abrar-saleem-portfolio",
+  "version": "1.0.0",
+  "description": "Portfolio website for Abrar Saleem — Full-Stack Software Engineer",
+  "scripts": {
+    "build": "tailwindcss -i ./src/input.css -o ./assets/css/tailwind.css --minify",
+    "dev": "tailwindcss -i ./src/input.css -o ./assets/css/tailwind.css --watch"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.17"
+  }
+}
